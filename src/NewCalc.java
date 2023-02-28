@@ -21,9 +21,17 @@ public class NewCalc {
         }else{
             throw new Exception("Некорректный знак действия");
         }
+        if (data[0].length()>10) throw new Exception("Количество букв должно быть меньше 11");
+        if (data[1].length()>10) throw new Exception("Количество букв должно быть меньше 11");
         if (action == '*' || action == '/') {
             if (data[1].contains("\"")) throw new Exception("Строчку можно делить или умножать только на число");
+            else if (action == '*' || action == '/') {
+                int multiplier1 = Integer.parseInt(data[1]);
+                if (multiplier1>10 || multiplier1<1) throw new Exception("число должно быть от 1 до 10");
+
+            }
         }
+
         for (int i = 0; i < data.length; i++) {
             data[i] = data[i].replace("\"", "");
         }
@@ -55,6 +63,10 @@ public class NewCalc {
 
     }
     static void printInQuotes(String text){
+        if (text.length()>40){
+            System.out.println("\""+text+"..."+"\"");
+        }
+        else
         System.out.println("\""+text+"\"");
     }
 }
