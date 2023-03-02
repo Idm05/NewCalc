@@ -32,9 +32,9 @@ public class NewCalc {
             }
         }
 
-        for (int i = 0; i < data.length; i++) {
-            data[i] = data[i].replace("\"", "");
-        }
+        // for (int i = 0; i < data.length; i++) {
+        //     data[i] = data[i].replace("\"", "");
+        // }
 
         if (action == '+') {
             printInQuotes(data[0] + data[1]);
